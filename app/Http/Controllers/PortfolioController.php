@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Project;
 
 class PortfolioController extends Controller
@@ -12,4 +11,11 @@ class PortfolioController extends Controller
         $projects = Project::all();
         return view('index', compact('projects'));
     }
+
+    public function findOne($id){
+        return view('project', [
+            'project' => Project::find($id)
+        ]);
+    }
+
 }

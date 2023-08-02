@@ -1,10 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ConnexionController;
-use App\Http\Controllers\PortfolioController; 
-
+use App\Http\Controllers\PortfolioController;
+use App\Models\Project;
 
 Route::get('/', [PortfolioController::class, 'index']);
-Route::get('/data', [ConnexionController::class, 'getData']);
+Route::get('/projects/{id}', [PortfolioController::class, 'findOne']);
