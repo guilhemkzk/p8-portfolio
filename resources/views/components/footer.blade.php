@@ -1,5 +1,5 @@
 
-<footer class="bg-gray-50 shadow  dark:bg-black bottom-0">
+<footer class="bg-gray-50 shadow dark:bg-black bottom-0">
     <div class="h-1 bg-white w-full "></div>
     <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
       <span class="text-sm text-green-100 sm:text-center">© Guilhem Krewcun 2023. All Rights Reserved.

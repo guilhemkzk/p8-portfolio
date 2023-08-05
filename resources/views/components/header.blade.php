@@ -1,7 +1,7 @@
 <!-- component -->
 <div class="antialiased bg-gray-200"> 
   <nav class="fixed top-0 w-full  bg-black shadow-md  text-gray-400" 
-       x-data="navbar()" 
+       {{-- x-data="navbar()"  --}}
        @scroll.window="navbarVisibility()"
        x-show="isNavbarVisible"
        x-transition:enter="transition ease-out duration-300"
