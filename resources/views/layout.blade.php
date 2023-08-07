@@ -10,15 +10,19 @@
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
-    {{-- @vite('resources/js/app.js') --}}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+
+
 
 
 </head>
 
 <body class="antialiased bg-gray-200 h-screen" style="font-family: 'Roboto', Courier, monospace;"> 
   <x-header>
-
   </x-header>
 
     @yield('content')

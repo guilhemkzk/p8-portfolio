@@ -1,8 +1,6 @@
+@import "fonts.css";
+@import "custom.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@font-face {
-    font-family: Roboto;
-    src: url("/fonts/Roboto-Regular.tff");
-}

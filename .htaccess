@@ -2,7 +2,14 @@ Options +SymLinksIfOwnerMatch
 RewriteEngine On
 
 # Allow Installatron requests
+
 RewriteCond %{REQUEST_FILENAME} deleteme\.\w+\.php
-RewriteRule (.*) - [L] 
+RewriteRule (.\*) - [L]
 
 RewriteRule ^ index.php [L]
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^gkwn-site.website$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^gkwn-site.website$
+RewriteCond %{REQUEST_URI} !public_html/
+RewriteRule (.\*) /public_html/$1 [L]

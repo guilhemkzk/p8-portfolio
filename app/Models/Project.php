@@ -16,15 +16,4 @@ class Project extends Model
 
    }
 
-   public static function find($id) {
-    $projects = self::all();
-
-
-    foreach($projects as $project) {
-        if ($project['id'] == $id) {
-
-            return $project;
-        }
-    }
-   }
 }

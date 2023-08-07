@@ -1,6 +1,5 @@
 <!-- component -->
-<div class="antialiased bg-gray-200"> 
-  <nav class="fixed top-0 w-full  bg-black shadow-md  text-gray-400" 
+  <nav class="fixed top-0 w-full bg-zinc-950 shadow-md w-screen text-gray-400" 
        {{-- x-data="navbar()"  --}}
        @scroll.window="navbarVisibility()"
        x-show="isNavbarVisible"
@@ -41,16 +40,16 @@
           <!-- Menu, if mobile set to hidden -->
           <div :class="isHamburgerMenuVisible ? 'show' : 'hidden'" class="items-center md:flex">
               <div class="flex flex-col items-end md:flex-row md:ml-6 md:items-center">
-                  <a href="#about" class="mt-4 text-base font-semibold  text-green-100 transition duration-200 ease-out md:mx-4 md:mt-0 hover:text-green-900">
+                  <a href="#about" class="mt-4 text-base font-semibold  text-amber-100 transition duration-200 ease-out md:mx-4 md:mt-0 hover:text-amber-400">
                       01. A propos
                   </a>
-                  <a href="#experience" class="mt-4 text-base font-semibold  text-green-100 transition duration-200 ease-out md:mx-4 md:mt-0 hover:text-green-900">
-                      02. Expériences
+                  <a href="#experience" class="mt-4 text-base font-semibold  text-amber-100 transition duration-200 ease-out md:mx-4 md:mt-0 hover:text-amber-400">
+                      02. Compétences
                   </a>
-                  <a href="#project" class="mt-4 text-base font-semibold text-green-100 transition duration-200 ease-out md:mx-4 md:mt-0 hover:text-green-900">
+                  <a href="#project" class="mt-4 text-base font-semibold text-amber-100 transition duration-200 ease-out md:mx-4 md:mt-0 hover:text-amber-400">
                       03. Projets
                   </a>
-                  <a href="#contact" class="mt-4 text-base font-semibold text-green-100 transition duration-200 ease-out md:mx-4 md:mt-0 hover:text-green-900">
+                  <a href="#contact" class="mt-4 text-base font-semibold text-amber-100 transition duration-200 ease-out md:mx-4 md:mt-0 hover:text-amber-400">
                     04. Contact
                 </a>
                  
@@ -58,6 +57,5 @@
               </div>
           </div>
       </div>
-      <div class="h-1 bg-gray-50 w-full"></div>
+      <div class="h-1 bg-amber-400 w-full"></div>
   </nav>
-</div>
