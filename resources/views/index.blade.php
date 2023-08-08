@@ -12,26 +12,31 @@
 
 
     <!-- Home Section -->
-    <section class="py-16  bg-zinc-950 w-full" id="home">
-        <div class=" mt-6 h-80 mx-10 ">
-            <p class="text-amber-100 text-base font-semibold" >Bonjour, je suis</p>
-            <h1 class="text-amber-400 text-5xl font-semibold mx-3 py-3" >Guilhem Krewcun</h1>
-            <p class="text-amber-100 text-base font-semibold">Je fabrique des sites webs et cartes.</p>
+    <section class="pt-16  bg-zinc-950 flex flex-row justify-between align-middle" id="home">
+        <div class=" pb-16 mt-6 min-h-80 mx-10 z-10">
+            <p class="text-amber-100 md:text-2xl text-lg mb-6 font-semibold" >Bonjour, je suis</p>
+            <h1 class="text-amber-400 md:text-9xl text-5xl mb-6 font-semibold mx-3 py-3" >Guilhem Krewcun</h1>
+            <p class="text-amber-100 md:text-2xl text-lg font-semibold">Je fabrique des sites webs et cartes.</p>
+        </div>
+        <div class="max-h-80 z-0 overflow-clip flex justify-center items-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/White_Globe_Icon.png" alt="">
         </div>
     </section>
+
 
 
     <x-returnBtn>
     </x-returnBtn>
 
+
     <!-- 01. About Section -->
-    <section class="container bg-zinc-950 text-amber-100 py-10 my-10 mr-40 md:mr-20 sm:mr-10 rounded-r-lg w-full" id="about">
+    <section class="bg-zinc-950 text-amber-100 py-10 my-10 mr-0 md:mr-40 rounded-r-lg" id="about">
         <div class="container mx-8 py-6 w-fit">
             <div class= "container text-amber-400 w-11/12 mb-4">
                 <h2 class="text-2xl font-semibold">01. A propos</h2>
             </div>
 
-            <p class="container text-base leading-relaxed text-justify flex flex-auto w-fit">
+            <p class="container text-lg leading-loose text-justify flex flex-auto w-fit">
                 Passioné de code et de développement depuis l'adolescence, j'ai commencé à exercer dans le domaine des sciences en Matlab puis en Python, appliqué au traitement d'image et au machine learning.
                 J'ai ensuite travaillé dans le domaine de la géomatique et de la gestion de bases de données avant me tourner vers les applications web en PHP et JS.
                 <br><br>
@@ -41,49 +46,45 @@
     </section>
 
     <!-- 02. Experience Section -->
-    <section class="container bg-gray-200 py-10 my-10 ml-40 md:ml-20 sm:ml-10 rounded-l-lg w-full" id="experience">
+    <section class=" bg-gray-200 py-10 my-10 ml-0 md:ml-40 rounded-l-lg" id="experience">
         <div class="container mx-8 w-fit">
             <div class= "container  text-zinc-950 w-11/12 mb-4">
                 <h2 class="text-2xl font-semibold">02. Compétences</h2>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-               <!-- Example Expérience Card -->
-                <div class="bg-zinc-950 p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-2 text-gray-50">Expérience 1</h3>
-                    <p class="text-gray-50">A description of expérience 1 goes here.</p>
-                    <a href="#" class="text-amber-400 hover:underline mt-4 inline-block">Voir</a>
-                </div>
-                <div class="bg-zinc-950 p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-2 text-gray-50">Expérience 1</h3>
-                    <p class="text-gray-50">A description of expérience 1 goes here.</p>
-                    <a href="#" class="text-amber-400 hover:underline mt-4 inline-block">Voir</a>
-                </div>
-                <div class="bg-zinc-950 p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-2 text-gray-50">Expérience 1</h3>
-                    <p class="text-gray-50">A description of expérience 1 goes here.</p>
-                    <a href="#" class="text-amber-400 hover:underline mt-4 inline-block">Voir</a>
-                </div>
+            <div class="flex flex-row flex-wrap justify-evenly ">
+                {{-- grid grid-cols-1 md:grid-cols-5 lg:grid-cols-10 gap-10 --}}
+                @foreach ($skills as $skill)
+                    <div class="bg-zinc-950 p-4 rounded-full w-40 h-40 shadow-md box-content flex flex-col justify-center items-center">
+                        <h3 class="text-xl font-semibold mb-2 text-amber-400">{{ $skill->name }}</h3>
+                        <img class="w-20 h-20 " src={{ $skill->url }} alt={{ $skill->name }}>
+                    </div>
+                @endforeach
+
+
+               
             </div>
         </div>
     </section>
 
     <!-- 03. Projects Section -->
-    <section class="container bg-zinc-950 text-amber-100 py-10 my-10 mr-40 md:mr-20 sm:mr-10 rounded-r-lg w-full" id="project">
+    <section class=" bg-zinc-950 text-amber-100 py-10 my-10 mr-0 md:mr-40 rounded-r-lg " id="project">
         <div class="container mx-8 w-fit">
-            <div class= "container  text-amber-400 w-11/12 mb-4">
+            <div class= "container  text-amber-400 mb-4">
                 <h2 class="text-2xl font-semibold" >03. Projets</h2>
             </div>
 
-            <div class="max-w-5xl mx-auto my-20">
-                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="mx-auto my-20">
+                <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-4">
                     @foreach ($projects as $project)
                         <div class="bg-white rounded-md overflow-hidden shadow-md">
-                            <img src={{ $project->url_img }} alt={{ $project->name }} class="object-cover">
+                            {{-- <img src={{ $project->url_img }} alt={{ $project->name }} class="object-cover"> --}}
                             <h4 class="mx-8 mt-8 font-bold text-zinc-950 text-xl">{{ $project->name }}</h4>
-                            <p class="mx-8 mb-8 text-xs text-amber-400">{{ $project->tags }}</p>
-                            <p class="mx-8 mb-8 text-xs leaning-relaxed text-justify text-gray-800 leading-relaxed">{{ $project->description }}</p>
-                            <a href={{ $project->url }} target="_blank" class="rounded-md bg-zinc-600 text-white font-semibold flex justify-center mx-4">Visiter</a>
-                            <p class="mx-8 mb-8 text-xs text-right italic text-gray-400">Ecrit par @gkwn, {{ date('d m Y', strtotime($project->created_at)) }}</p>
+                            <p class="mx-8 text-base leaning-loose text-justify text-zinc-950 ">{{ $project->description }}</p>
+                            <p class="mx-8 mb-8 first-letter:text-base text-amber-400">{{ $project->tags }}</p>
+                            <p class="mx-8 text-lg leaning-loose text-justify text-amber-400 ">Problématiques et solutions</p>
+                            <p class="mx-8 mb-8 text-base leaning-loose text-justify  text-zinc-950 ">{{ $project->details }}</p>
+                            <a href={{ $project->url }} target="_blank" class="rounded-md text-base bg-zinc-600 text-white font-semibold flex justify-center mx-4">Visiter</a>
+                            <p class="mx-8 mb-8 text-base text-right italic text-gray-400">Ecrit par @gkwn, {{ date('d m Y', strtotime($project->created_at)) }}</p>
                         </div>
                     @endforeach
                 </div>
@@ -93,12 +94,12 @@
     </section>
 
     <!-- 04. Contact Section -->
-    <section class="container bg-gray-200 py-10 my-10 ml-40 md:ml-20 sm:ml-10 rounded-l-lg w-full" id="contact">
-        <div class="container mx-8">
+    <section class=" bg-gray-200 py-10 my-10 ml-0 md:ml-40 rounded-l-lg" id="contact">
+        <div class=" mx-8">
             <div class="text-zinc-950 w-11/12 mb-4">
                 <h2 class="text-2xl font-semibold ">04. Contact</h2>
             </div>
-            <div class="container flex flex-column justify-center w-full mx-2">
+            <div class=" flex flex-column justify-center  mx-2">
                 <x-form>
                 </x-form>
             </div>

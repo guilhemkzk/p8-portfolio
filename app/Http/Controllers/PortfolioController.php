@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\Skills;
 use Symfony\Component\HttpFoundation\Request;
 
 class PortfolioController extends Controller
@@ -10,7 +11,9 @@ class PortfolioController extends Controller
     public function index()
     {
         $projects = Project::all();
-        return view('index', compact('projects'));
+        $skills = Skills::all();
+        return view('index', compact('projects', 'skills'));
+
     }
 
     public function send()
@@ -33,12 +36,13 @@ class PortfolioController extends Controller
         $message = $email;
 
         $projects = Project::all();
+        $skills = Skills::all();
         
 
         if (mail($destinataire, $objet, $message, $headers)) // Envoi du message
         {
             $alertMsg = 'Email envoyé';
-            return view('index', compact('projects', 'alertMsg'));
+            return view('index', compact('projects', 'skills', 'alertMsg'));
 
         }else{ 
             $alertMsg = 'Erreur, mail non envoyé';

@@ -1,6 +1,6 @@
 <body class="antialiased bg-gray-200">
-    <div class="flex justify-center items-center">
-        <div class="flex-1 max-w-lg p-8 mx-2 bg-white rounded-sm shadow-md">
+    <div class="flex justify-center items-center w-80% lg:w-2/3">
+        <div class="flex-1 max-w-5xl p-8 mx-2 bg-white rounded-sm shadow-md">
             <section class="pt-2 pb-4">
                 <h1 class="text-xl font-extrabold">Me contacter</h1>
                 <p class="text-sm text-zinc-950   ">
