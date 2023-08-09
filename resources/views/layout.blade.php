@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/png" href="{{url('favicon.ico')}}">
+    <link rel="shortcut icon" type="image/png" href="https://cdn.discordapp.com/attachments/1123197989129814067/1138814777746014269/favicon.ico">
     <title>Portfolio</title>
 
 

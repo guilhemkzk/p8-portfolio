@@ -5,7 +5,8 @@
             <!-- Brand -->
             <a href="/" class="transition duration-500 ease-in-out transform hover:scale-110">
                 <div class="flex items-center">
-                    <span class="text-3xl ml-8 text-gray-200 font-extrabold">GK</span>
+                    <img src="https://cdn.discordapp.com/attachments/1123197989129814067/1138815162523058288/logo.png" class="ml-8 w-12 h-12" alt="Logo">
+                    {{-- <span class="text-3xl ml-8 text-gray-200 font-extrabold">GK</span> --}}
                 </div>
             </a>
 
