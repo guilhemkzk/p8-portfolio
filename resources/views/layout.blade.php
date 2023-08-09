@@ -21,7 +21,7 @@
 
 </head>
 
-<body class="antialiased h-screen" style="font-family: 'Roboto', Courier, monospace;"> 
+<body class="antialiased h-screen" style="font-family: 'Roboto', Courier, monospace;">
   <x-header>
   </x-header>
   @yield('content')

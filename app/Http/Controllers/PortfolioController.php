@@ -16,16 +16,12 @@ class PortfolioController extends Controller
 
     }
 
-    public function send()
+    public function contact(Request $request)
     {
-  
-
-        $data = file_get_contents('php://input');
-        $email = explode('&', $data, 2)[0];
 
         //Préparer le mail
         $destinataire = 'levi.krken@gmail.com'; //admin
-        $expediteur = 'levi.krken@gmail.com'; // à récupérer en fonction de l'identifiant de session
+        $expediteur = $request->email; // à récupérer en fonction de l'identifiant de session
         $objet = 'Contact via le site gkwn-site';
         // Objet du message
         $headers  = 'MIME-Version: 1.0' . "\n"; // Version MIME
@@ -33,21 +29,27 @@ class PortfolioController extends Controller
         $headers .= 'From: "Nom_de_expediteur"<'.$expediteur.'>'."\n"; // Expediteur
         $headers .= 'Delivered-to: '.$destinataire."\n"; // Destinataire
 
-        $message = $email;
-
         $projects = Project::all();
         $skills = Skills::all();
         
-
-        if (mail($destinataire, $objet, $message, $headers)) // Envoi du message
+        if (mail($destinataire, $objet, $request->email, $headers)) // Envoi du message
         {
-            $alertMsg = 'Email envoyé';
-            return view('index', compact('projects', 'skills', 'alertMsg'));
+            $alert = [
+                'body' => "Email envoyé",
+                'color' => "green",
+            ];
+            return redirect()
+                        ->route('portfolio.index',compact('projects', 'skills'))
+                        ->with('alert', $alert);
 
         }else{ 
-            $alertMsg = 'Erreur, mail non envoyé';
-            return view('index', compact('projects', 'alertMsg'));
-
+            $alert = [
+                'body' => "Email non envoyé",
+                'color' => "red",
+            ];
+            return redirect()
+                        ->route('portfolio.index',compact('projects', 'skills'))
+                        ->with('alert', $alert);
         }
 
     }

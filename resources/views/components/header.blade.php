@@ -39,7 +39,7 @@
         </div>
 
         <!-- mobile menu -->
-        <div class="hidden mobile-menu flex flex-col items-end">
+        <div class="z-80 hidden mobile-menu flex flex-col items-end bg-zinc-950">
             <ul class="">
                 <li><a href="#about" class="block text-sm px-2 py-4 hover:text-amber-400 transition duration-300">01. A propos</a></li>
                 <li><a href="#experience" class="block text-sm px-2 py-4 hover:text-amber-400 transition duration-300">02. Compétences</a></li>

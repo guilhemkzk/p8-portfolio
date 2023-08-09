@@ -1,3 +1,11 @@
 body {
     font-family: "Roboto", Courier, monospace;
 }
+
+.h-800 {
+    height: 800px;
+}
+
+.h-400 {
+    height: 400px;
+}
