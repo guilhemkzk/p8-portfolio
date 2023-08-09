@@ -73,20 +73,20 @@
     <section class=" bg-zinc-950 text-amber-100 py-10 my-10 mr-0 md:mr-40 rounded-r-lg flex justify-center" id="project">
         <div class="container mx-8 w-fit">
             <div class= "container  text-amber-400 mb-4">
-                <h2 class="text-2xl font-semibold" >03. Projets</h2>
+                <h2 class="text-2xl font-semibold ml-2 md:ml-4" >03. Projets</h2>
             </div>
 
             <div class="mx-auto my-20">
                 <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-4">
                     @foreach ($projects as $project)
-                        <div class="bg-gray-50 rounded-md overflow-hidden shadow-md">
+                        <div class="bg-gray-50 rounded-md overflow-hidden shadow-md flex flex-col justify-center m-2 md:m-6">
                             <img src={{ $project->url_img }} alt={{ $project->name }} class="object-contain">
-                            <h4 class="mx-8 mt-8 font-bold text-zinc-950 text-2xl">{{ $project->name }}</h4>
-                            <p class="mx-8 text-base leaning-loose text-justify text-zinc-950 h-auto md:h-20">{{ $project->description }}</p>
+                            <h4 class="mx-8 mt-8 mb-2 font-bold text-zinc-950 text-2xl">{{ $project->name }}</h4>
+                            <p class="mx-8 mb-2text-base leaning-loose text-justify text-zinc-950 h-auto md:h-20">{{ $project->description }}</p>
                             <p class="mx-8 mb-8 first-letter:text-base text-amber-400 font-semibold">{{ $project->tags }}</p>
                             <p class="mx-8 text-xl leaning-loose text-justify text-amber-400 font-semibold">Problématiques et solutions</p>
-                            <p class="mx-8 text-base leaning-loose text-justify h-auto md:h-40 my-4 text-zinc-950 ">{{ $project->details }}</p>
-                            <a href={{ $project->url }} target="_blank" class=" py-4 rounded-md text-lg bg-amber-400 text-zinc-950 hover:bg-amber-200 font-semibold flex justify-center mx-auto my-8 max-w-xs hover:shadow-md">Visiter</a>
+                            <p class="mx-8 text-base leaning-loose text-justify h-auto md:h-44 my-4 text-zinc-950 ">{{ $project->details }}</p>
+                            <a href={{ $project->url }} target="_blank" class=" py-4 rounded-md text-lg bg-amber-400 text-zinc-950 hover:bg-amber-200 font-semibold flex justify-center mx-auto my-8 max-w-xs w-2/3 hover:shadow-md">Visiter</a>
                             <p class="mx-8 mb-8 text-base text-right italic text-gray-400">Ecrit par Guilhem Krewcun, {{ date('d m Y', strtotime($project->created_at)) }}</p>
                         </div>
                     @endforeach
